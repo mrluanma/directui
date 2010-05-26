@@ -1,15 +1,7 @@
-
 #include "StdAfx.h"
-
 #include "Views.h"
-
-//#include <mshtml.h>
 #include <exdisp.h>
 #include <comdef.h>
-
-
-////////////////////////////////////////////////////////////////////////
-//
 
 UINT CStandardPageWnd::GetClassStyle() const 
 { 
@@ -71,10 +63,10 @@ LPCTSTR CStartPageWnd::GetDialogResource() const
           _T("<NavigatorPanel>")
             _T("<PaddingPanel height=\"18\" />")
             _T("<NavigatorButton name=\"page_start\" text=\"<i 0> Start\" selected=\"true\" tooltip=\"Vis start siden\" />")
-            _T("<NavigatorButton name=\"page_registers\" text=\"<i 4> Register\" tooltip=\"Vis forskellige registre\" />")
+            _T("<NavigatorButton name=\"page_registers\" text=\"<i 4> 登记\" tooltip=\"Vis forskellige registre\" />")
             _T("<NavigatorButton name=\"page_systems\" text=\"<i 4> System\" />")
             _T("<NavigatorButton name=\"page_configure\" text=\"<i 4> Opsning\" />")
-            _T("<NavigatorButton name=\"page_reports\" text=\"<i 4> Report\" />")
+            _T("<NavigatorButton name=\"page_reports\" text=\"<i 4> 报表\" />")
           _T("</NavigatorPanel>")
         _T("</VerticalLayout>")
         _T("<VerticalLayout>")
@@ -88,10 +80,10 @@ LPCTSTR CStartPageWnd::GetDialogResource() const
               _T("<TextPanel text=\"<f 8>Vlg startomrde</h>\" />")
               _T("<FadedLine />")
               _T("<TileLayout scrollbar=\"true\" >")
-                _T("<TextPanel name=\"link_registers\" text=\"<i 7 50><a><f 6>&Register</f></a>\n<h>\n<c #444540>Vlg denne menu for at rette i diverse registre i systemet.\n\nDu kan rette i kunde, vogn og chauffr-reigsteret.\" shortcut=\"R\" />")
+                _T("<TextPanel name=\"link_registers\" text=\"<i 7 50><a><f 6>&登记</f></a>\n<h>\n<c #444540>Vlg denne menu for at rette i diverse registre i systemet.\n\nDu kan rette i kunde, vogn og chauffr-reigsteret.\" shortcut=\"R\" />")
                 _T("<TextPanel name=\"link_systems\" text=\"<i 9 50><a><f 6>&System</f></a>\n<h>\n<c #444540>Gennem denne menu kan du opstte diverse ting.\" shortcut=\"S\" />")
                 _T("<TextPanel name=\"link_configure\" text=\"<i 6 50><a><f 6>Opstning</f></a>\n<h>\n<c #444540>Opstning giver adgang til konfiguration af de mange krsels-systemer og regler.\" />")
-                _T("<TextPanel name=\"link_reports\" text=\"<i 5 50><a><f 6>Report</f></a>\n<h>\n<c #444540>Report giver dig overblik over registre samt hverdagens ture og bestillinger.\n\nGennem statistik og lister kan du hurtigt f?prsenteret historiske data fra systemet.\" />")
+                _T("<TextPanel name=\"link_reports\" text=\"<i 5 50><a><f 6>Report</f></a>\n<h>\n<c #444540>报表 giver dig overblik over registre samt hverdagens ture og bestillinger.\n\nGennem statistik og lister kan du hurtigt f?prsenteret historiske data fra systemet.\" />")
               _T("</TileLayout>")
             _T("</VerticalLayout>")
           _T("</WindowCanvas>")
@@ -137,10 +129,10 @@ LPCTSTR CConfigurePageWnd::GetDialogResource() const
           _T("<NavigatorPanel>")
             _T("<PaddingPanel height=\"18\" />")
             _T("<NavigatorButton name=\"page_start\" text=\"<i 0> Start\" tooltip=\"Vis start siden\" />")
-            _T("<NavigatorButton name=\"page_registers\" text=\"<i 4> Register\" tooltip=\"Vis forskellige registre\" />")
+            _T("<NavigatorButton name=\"page_registers\" text=\"<i 4> 登记\" tooltip=\"Vis forskellige registre\" />")
             _T("<NavigatorButton name=\"page_systems\" text=\"<i 4> System\" />")
             _T("<NavigatorButton name=\"page_configure\" text=\"<i 4> Opstning\" selected=\"true\" />")
-            _T("<NavigatorButton name=\"page_reports\" text=\"<i 4> Report\" />")
+            _T("<NavigatorButton name=\"page_reports\" text=\"<i 4> 报表\" />")
           _T("</NavigatorPanel>")
         _T("</VerticalLayout>")
         _T("<VerticalLayout>")
@@ -164,7 +156,7 @@ LPCTSTR CConfigurePageWnd::GetDialogResource() const
                   _T("<SeparatorLine />")
                   _T("<TextPanel text=\"<c #414141>Dobbeltklik p?et element i listen for at konfigurere det.</c>\n\" />")
                   _T("<List header=\"hidden\" >")
-                     _T("<TextPanel text=\"<x 16><c #585ebf><b>Register</b>\n<h>\" />")
+                     _T("<TextPanel text=\"<x 16><c #585ebf><b>登记</b>\n<h>\" />")
                      _T("<ListLabelElement text=\"<i 4> Vejregister\" />")
                      _T("<ListLabelElement text=\"<i 4> Institutions register\" />")
                      _T("<ListLabelElement text=\"<i 4> Kunde register\" />")
@@ -210,15 +202,15 @@ LPCTSTR CRegistersPageWnd::GetDialogResource() const
           _T("<NavigatorPanel>")
             _T("<PaddingPanel height=\"18\" />")
             _T("<NavigatorButton name=\"page_start\" text=\"<i 0> Start\" tooltip=\"Vis start siden\" />")
-            _T("<NavigatorButton name=\"page_registers\" text=\"<i 4> Register\" tooltip=\"Vis forskellige registre\" selected=\"true\" />")
+            _T("<NavigatorButton name=\"page_registers\" text=\"<i 4> 登记\" tooltip=\"Vis forskellige registre\" selected=\"true\" />")
             _T("<NavigatorButton name=\"page_systems\" text=\"<i 4> System\" />")
             _T("<NavigatorButton name=\"page_configure\" text=\"<i 4> Opstning\" />")
-            _T("<NavigatorButton name=\"page_reports\" text=\"<i 4> Report\" />")
+            _T("<NavigatorButton name=\"page_reports\" text=\"<i 4> 报表\" />")
           _T("</NavigatorPanel>")
         _T("</VerticalLayout>")
         _T("<VerticalLayout>")
           _T("<Toolbar>")
-            _T("<LabelPanel align=\"right\" text=\"<f 6><c #fffe28>Register</c></f>\" />")
+            _T("<LabelPanel align=\"right\" text=\"<f 6><c #fffe28>登记</c></f>\" />")
           _T("</Toolbar>")
           _T("<TitleShadow />")
           _T("<WindowCanvas>")
@@ -290,10 +282,10 @@ LPCTSTR CSystemsPageWnd::GetDialogResource() const
           _T("<NavigatorPanel>")
             _T("<PaddingPanel height=\"18\" />")
             _T("<NavigatorButton name=\"page_start\" text=\"<i 0> Start\" tooltip=\"Vis start siden\" />")
-            _T("<NavigatorButton name=\"page_registers\" text=\"<i 4> Register\" tooltip=\"Vis forskellige registre\" />")
+            _T("<NavigatorButton name=\"page_registers\" text=\"<i 4> 登记\" tooltip=\"Vis forskellige registre\" />")
             _T("<NavigatorButton name=\"page_systems\" text=\"<i 4> System\" selected=\"true\" />")
             _T("<NavigatorButton name=\"page_configure\" text=\"<i 4> Opstning\" />")
-            _T("<NavigatorButton name=\"page_reports\" text=\"<i 4> Report\" />")
+            _T("<NavigatorButton name=\"page_reports\" text=\"<i 4> 报表\" />")
           _T("</NavigatorPanel>")
         _T("</VerticalLayout>")
         _T("<VerticalLayout>")
@@ -383,7 +375,7 @@ void CSystemsPageWnd::OnExpandItem(CControlUI* pControl)
 
 LPCTSTR CReportsPageWnd::GetWindowClassName() const 
 { 
-   return _T("UIReports"); 
+   return _T("UI报表s"); 
 }
 
 LPCTSTR CReportsPageWnd::GetDialogResource() const 
@@ -397,24 +389,24 @@ LPCTSTR CReportsPageWnd::GetDialogResource() const
           _T("<NavigatorPanel>")
             _T("<PaddingPanel height=\"18\" />")
             _T("<NavigatorButton name=\"page_start\" text=\"<i 0> Start\" tooltip=\"Vis start siden\" />")
-            _T("<NavigatorButton name=\"page_registers\" text=\"<i 4> Register\" tooltip=\"Vis forskellige registre\" />")
+            _T("<NavigatorButton name=\"page_registers\" text=\"<i 4> 登记\" tooltip=\"Vis forskellige registre\" />")
             _T("<NavigatorButton name=\"page_systems\" text=\"<i 4> System\" />")
             _T("<NavigatorButton name=\"page_configure\" text=\"<i 4> Opstning\" />")
-            _T("<NavigatorButton name=\"page_reports\" text=\"<i 4> Report\" selected=\"true\" />")
+            _T("<NavigatorButton name=\"page_reports\" text=\"<i 4> 报表\" selected=\"true\" />")
           _T("</NavigatorPanel>")
         _T("</VerticalLayout>")
         _T("<VerticalLayout>")
           _T("<Toolbar>")
-            _T("<LabelPanel align=\"right\" text=\"<f 6><c #fffe28>Report</c></f>\" />")
+            _T("<LabelPanel align=\"right\" text=\"<f 6><c #fffe28>报表</c></f>\" />")
           _T("</Toolbar>")
-          _T("<ToolbarTitlePanel name=\"titlepanel\" text=\"<f 7>Report</f>\" />")
+          _T("<ToolbarTitlePanel name=\"titlepanel\" text=\"<f 7>报表</f>\" />")
           _T("<TitleShadow />")
           _T("<WindowCanvas>")
             _T("<TileLayout>")
-               _T("<TextPanel text=\"<i 0 50><a><f 6>Kunde Report</f></a>\n<h>\n<c #444540>Report for kunde registeret.\" />")
-               _T("<TextPanel text=\"<i 1 50><a><f 6>Vogn Report</f></a>\n<h>\n<c #444540>Report for vogn and vognmands-registeret.\" />")
-               _T("<TextPanel text=\"<i 2 50><a><f 6>Chauffr Report</f></a>\n<h>\n<c #444540>Report for chauffrer registeret.\" />")
-               _T("<TextPanel text=\"<i 3 50><a><f 6>Bestilling Report</f></a>\n<h>\n<c #444540>Report over bestillinger.\" />")
+               _T("<TextPanel text=\"<i 0 50><a><f 6>Kunde Report</f></a>\n<h>\n<c #444540>报表 for kunde registeret.\" />")
+               _T("<TextPanel text=\"<i 1 50><a><f 6>Vogn Report</f></a>\n<h>\n<c #444540>报表 for vogn and vognmands-registeret.\" />")
+               _T("<TextPanel text=\"<i 2 50><a><f 6>Chauffr Report</f></a>\n<h>\n<c #444540>报表 for chauffrer registeret.\" />")
+               _T("<TextPanel text=\"<i 3 50><a><f 6>Bestilling Report</f></a>\n<h>\n<c #444540>报表 over bestillinger.\" />")
             _T("</TileLayout>")
           _T("</WindowCanvas>")
         _T("</VerticalLayout>")
