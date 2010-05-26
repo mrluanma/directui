@@ -25,7 +25,7 @@ public:
    {
       if( uMsg == WM_CREATE ) {
          SetIcon(IDR_MAINFRAME);
-         _CreatePage("page_start");
+         _CreatePage(_T("page_start"));
       }
       if( uMsg == WM_DESTROY ) {
          ::PostQuitMessage(0L);
@@ -54,16 +54,16 @@ public:
    void _CreatePage(CStdString sName)
    {
       CStandardPageWnd* pWindow = NULL;
-      if( sName == "page_start" ) pWindow = new CStartPageWnd;
-      if( sName == "page_configure" ) pWindow = new CConfigurePageWnd;
-      if( sName == "page_reports" ) pWindow = new CReportsPageWnd;
-      if( sName == "page_systems" ) pWindow = new CSystemsPageWnd;
-      if( sName == "page_registers" ) pWindow = new CRegistersPageWnd;
-      if( sName == "link_start" ) pWindow = new CStartPageWnd;
-      if( sName == "link_configure" ) pWindow = new CConfigurePageWnd;
-      if( sName == "link_reports" ) pWindow = new CReportsPageWnd;
-      if( sName == "link_systems" ) pWindow = new CSystemsPageWnd;
-      if( sName == "link_registers" ) pWindow = new CRegistersPageWnd;
+      if( sName == _T("page_start") ) pWindow = new CStartPageWnd;
+      if( sName == _T("page_configure") ) pWindow = new CConfigurePageWnd;
+      if( sName == _T("page_reports") ) pWindow = new CReportsPageWnd;
+      if( sName == _T("page_systems") ) pWindow = new CSystemsPageWnd;
+      if( sName == _T("page_registers") ) pWindow = new CRegistersPageWnd;
+      if( sName == _T("link_start") ) pWindow = new CStartPageWnd;
+      if( sName == _T("link_configure") ) pWindow = new CConfigurePageWnd;
+      if( sName == _T("link_reports") ) pWindow = new CReportsPageWnd;
+      if( sName == _T("link_systems") ) pWindow = new CSystemsPageWnd;
+      if( sName == _T("link_registers") ) pWindow = new CRegistersPageWnd;
       if( pWindow != NULL ) {
          if( m_hWndClient != NULL ) ::PostMessage(m_hWndClient, WM_CLOSE, 0, 0L);
          pWindow->m_pm.AddNotifier(this);
@@ -71,8 +71,8 @@ public:
          PostMessage(WM_SIZE);
          return;
       }
-      if( sName == "page_search" ) pWindow = new CSearchPageWnd;
-      if( sName == "page_edit" ) pWindow = new CEditPageWnd;
+      if( sName == _T("page_search") ) pWindow = new CSearchPageWnd;
+      if( sName == _T("page_edit") ) pWindow = new CEditPageWnd;
       if( pWindow != NULL ) {
          pWindow->Create(m_hWnd, NULL, UI_WNDSTYLE_FRAME, UI_WNDSTYLE_EX_FRAME);
          return;
@@ -91,11 +91,11 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*l
    HRESULT Hr = ::CoInitialize(NULL);
    if( FAILED(Hr) ) return 0;
 
-   if( ::LoadLibrary("d3d9.dll") == NULL ) ::MessageBox(NULL, "Denne applikation vises bedst med DirectX 9 installeret!", "Test", MB_ICONINFORMATION);
+   if( ::LoadLibrary(_T("d3d9.dll")) == NULL ) ::MessageBox(NULL, _T("Denne applikation vises bedst med DirectX 9 installeret!"), _T("Test"), MB_ICONINFORMATION);
 
    CFrameWindowWnd* pFrame = new CFrameWindowWnd();
    if( pFrame == NULL ) return 0;
-   pFrame->Create(NULL, "Test", UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+   pFrame->Create(NULL, _T("Test"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 
    CPaintManagerUI::MessageLoop();
 
