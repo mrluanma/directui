@@ -17,7 +17,7 @@
 #include <objbase.h>
 
 #include "..\UIlib\UIlib.h"
-#pragma comment(lib, "..\\bin\\UIlib.lib")
+#pragma comment(lib, "UIlib.lib")
 
 
 //{{AFX_INSERT_LOCATION}}

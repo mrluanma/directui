@@ -1,0 +1,12 @@
+*.plg
+*.ncb
+*.opt
+*.suo
+.DS_Store
+*~
+*.o
+*.tmp
+Thumbs.db
+Debug/
+Release/
+bin/
