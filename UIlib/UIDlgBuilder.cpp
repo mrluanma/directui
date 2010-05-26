@@ -23,7 +23,7 @@ CControlUI* CDialogBuilder::CreateFromResource(UINT nRes, IDialogBuilderCallback
       return NULL;
    }
    CStdString sXML;
-   sXML.Assign(static_cast<LPCSTR>(::LockResource(hGlobal)), ::SizeofResource(CPaintManagerUI::GetResourceInstance(), hResource));
+   sXML.Assign(static_cast<LPCTSTR>(::LockResource(hGlobal)), ::SizeofResource(CPaintManagerUI::GetResourceInstance(), hResource));
    sXML.Replace(_T("\\n"), _T("\n"));
    ::FreeResource(hResource);
    return Create(sXML, pCallback);

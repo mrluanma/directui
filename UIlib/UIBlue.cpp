@@ -363,7 +363,7 @@ void CBlueRenderEngineUI::DoPaintToolbarButton(HDC hDC, CPaintManagerUI* pManage
    DoPaintPrettyText(hDC, pManager, rcText, pstrText, UICOLOR_TITLE_TEXT, UICOLOR__INVALID, NULL, nLinks, DT_SINGLELINE | DT_LEFT | DT_VCENTER);
 }
 
-void CBlueRenderEngineUI::DoPaintQuickText(HDC hDC, CPaintManagerUI* pManager, RECT& rc, LPCSTR pstrText, UITYPE_COLOR iTextColor, UITYPE_FONT iFont, UINT uStyle)
+void CBlueRenderEngineUI::DoPaintQuickText(HDC hDC, CPaintManagerUI* pManager, RECT& rc, LPCTSTR pstrText, UITYPE_COLOR iTextColor, UITYPE_FONT iFont, UINT uStyle)
 {
    ASSERT(::GetObjectType(hDC)==OBJ_DC || ::GetObjectType(hDC)==OBJ_MEMDC);
    ::SetBkMode(hDC, TRANSPARENT);
@@ -703,7 +703,7 @@ void CBlueRenderEngineUI::DoPaintPrettyText(HDC hDC, CPaintManagerUI* pManager, 
 void CBlueRenderEngineUI::DoPaintGradient(HDC hDC, CPaintManagerUI* pManager, RECT rc, COLORREF clrFirst, COLORREF clrSecond, bool bVertical, int nSteps)
 {
    typedef BOOL (WINAPI *PGradientFill)(HDC, PTRIVERTEX, ULONG, PVOID, ULONG, ULONG);
-   static PGradientFill lpGradientFill = (PGradientFill) ::GetProcAddress(::GetModuleHandle("msimg32.dll"), "GradientFill");
+   static PGradientFill lpGradientFill = (PGradientFill) ::GetProcAddress(::GetModuleHandle(_T("msimg32.dll")), "GradientFill");
    if( lpGradientFill != NULL ) 
    {
       // Use Windows gradient function from msimg32.dll
@@ -753,7 +753,7 @@ void CBlueRenderEngineUI::DoPaintAlphaBitmap(HDC hDC, CPaintManagerUI* pManager,
 {
    // Alpha blitting is only supported of the msimg32.dll library is located on the machine.
    typedef BOOL (WINAPI *LPALPHABLEND)(HDC, int, int, int, int,HDC, int, int, int, int, BLENDFUNCTION);
-   static LPALPHABLEND lpAlphaBlend = (LPALPHABLEND) ::GetProcAddress(::GetModuleHandle("msimg32.dll"), "AlphaBlend");
+   static LPALPHABLEND lpAlphaBlend = (LPALPHABLEND) ::GetProcAddress(::GetModuleHandle(_T("msimg32.dll")), "AlphaBlend");
    if( lpAlphaBlend == NULL ) return;
    if( hBitmap == NULL ) return;
    HDC hCloneDC = ::CreateCompatibleDC(pManager->GetPaintDC());
@@ -789,7 +789,7 @@ void CBlueRenderEngineUI::DoAnimateWindow(HWND hWnd, UINT uStyle, DWORD dwTime /
 HBITMAP CBlueRenderEngineUI::GenerateAlphaBitmap(CPaintManagerUI* pManager, CControlUI* pControl, RECT rc, UITYPE_COLOR Background)
 {
    typedef BOOL (WINAPI *LPALPHABLEND)(HDC, int, int, int, int,HDC, int, int, int, int, BLENDFUNCTION);
-   static FARPROC lpAlphaBlend = ::GetProcAddress(::GetModuleHandle("msimg32.dll"), "AlphaBlend");
+   static FARPROC lpAlphaBlend = ::GetProcAddress(::GetModuleHandle(_T("msimg32.dll")), "AlphaBlend");
    if( lpAlphaBlend == NULL ) return NULL;
    int cx = rc.right - rc.left;
    int cy = rc.bottom - rc.top;

@@ -223,7 +223,7 @@ CPaintManagerUI::CPaintManagerUI() :
 
       // We need the image library for effects. It is however optional in Windows so
       // we'll also need to provide a gracefull fallback.
-      ::LoadLibrary("msimg32.dll");
+      ::LoadLibrary(_T("msimg32.dll"));
    }
    m_szMinWindow.cx = 140;
    m_szMinWindow.cy = 200;
@@ -852,7 +852,7 @@ bool CPaintManagerUI::MessageHandler(UINT uMsg, WPARAM wParam, LPARAM lParam, LR
    case WM_VSCROLL:
       {
          if( lParam == NULL ) break;
-         CContainerUI* pContainer = static_cast<CContainerUI*>(::GetProp((HWND) lParam, "WndX"));
+         CContainerUI* pContainer = static_cast<CContainerUI*>(::GetProp((HWND) lParam, _T("WndX")));
          if( pContainer == NULL ) break;
          TEventUI event = { 0 };
          event.Type = UIEVENT_VSCROLL;

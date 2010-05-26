@@ -27,7 +27,7 @@ void UILIB_API __Trace(LPCTSTR pstrFormat, ...)
 
 LPCTSTR __TraceMsg(UINT uMsg)
 {
-#define MSGDEF(x) if(uMsg==x) return #x
+#define MSGDEF(x) if(uMsg==x) return (LPCTSTR)#x
    MSGDEF(WM_SETCURSOR);
    MSGDEF(WM_NCHITTEST);
    MSGDEF(WM_NCPAINT);
@@ -436,15 +436,15 @@ LRESULT CALLBACK CWindowWnd::__ControlProc(HWND hWnd, UINT uMsg, WPARAM wParam, 
    if( uMsg == WM_NCCREATE ) {
       LPCREATESTRUCT lpcs = reinterpret_cast<LPCREATESTRUCT>(lParam);
       pThis = static_cast<CWindowWnd*>(lpcs->lpCreateParams);
-      ::SetProp(hWnd, "WndX", (HANDLE) pThis);
+      ::SetProp(hWnd, _T("WndX"), (HANDLE) pThis);
       pThis->m_hWnd = hWnd;
    } 
    else {
-      pThis = reinterpret_cast<CWindowWnd*>(::GetProp(hWnd, "WndX"));
+      pThis = reinterpret_cast<CWindowWnd*>(::GetProp(hWnd, _T("WndX")));
       if( uMsg == WM_NCDESTROY && pThis != NULL ) {
          LRESULT lRes = ::CallWindowProc(pThis->m_OldWndProc, hWnd, uMsg, wParam, lParam);
          if( pThis->m_bSubclassed ) pThis->Unsubclass();
-         ::SetProp(hWnd, "WndX", NULL);
+         ::SetProp(hWnd, _T("WndX"), NULL);
          pThis->m_hWnd = NULL;
          pThis->OnFinalMessage(hWnd);
          return lRes;

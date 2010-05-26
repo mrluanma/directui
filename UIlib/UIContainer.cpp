@@ -312,7 +312,7 @@ void CContainerUI::ProcessScrollbar(RECT rc, int cyRequired)
    if( cyRequired > rc.bottom - rc.top && m_hwndScroll == NULL && m_bAllowScrollbars ) {
       m_hwndScroll = ::CreateWindowEx(0, WC_SCROLLBAR, NULL, WS_CHILD | SBS_VERT, 0, 0, 0, 0, m_pManager->GetPaintWindow(), NULL, m_pManager->GetResourceInstance(), NULL);
       ASSERT(::IsWindow(m_hwndScroll));
-      ::SetProp(m_hwndScroll, "WndX", static_cast<HANDLE>(this));
+      ::SetProp(m_hwndScroll, _T("WndX"), static_cast<HANDLE>(this));
       ::SetScrollPos(m_hwndScroll, SB_CTL, 0, TRUE);
       ::ShowWindow(m_hwndScroll, SW_SHOWNOACTIVATE);
       SetPos(m_rcItem);
