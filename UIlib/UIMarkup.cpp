@@ -210,7 +210,7 @@ bool CMarkup::Load(LPCTSTR pstrXML)
    Release();
    SIZE_T cchLen = _tcslen(pstrXML) + 1;
    m_pstrXML = static_cast<LPTSTR>(malloc(cchLen * sizeof(TCHAR)));
-   ::CopyMemory(m_pstrXML, pstrXML, cchLen);
+   lstrcpyn(m_pstrXML, pstrXML, cchLen);
    bool bRes = _Parse();
    if( !bRes ) Release();
    return bRes;
@@ -248,7 +248,6 @@ void CMarkup::Release()
    if( m_pElements != NULL ) free(m_pElements);
    m_pstrXML = NULL;
    m_pElements = NULL;
-   m_nElements;
 }
 
 void CMarkup::GetLastErrorMessage(LPTSTR pstrMessage, SIZE_T cchMax) const

@@ -85,7 +85,7 @@ LPCTSTR CStartPageWnd::GetDialogResource() const
           _T("<TitleShadow />")
           _T("<WindowCanvas watermark=\"StartWatermark\" >")
             _T("<VerticalLayout>")
-              _T("<TextPanel text=\"<f 8>Vlg startomrde?</h>\" />")
+              _T("<TextPanel text=\"<f 8>Vlg startomrde</h>\" />")
               _T("<FadedLine />")
               _T("<TileLayout scrollbar=\"true\" >")
                 _T("<TextPanel name=\"link_registers\" text=\"<i 7 50><a><f 6>&Register</f></a>\n<h>\n<c #444540>Vlg denne menu for at rette i diverse registre i systemet.\n\nDu kan rette i kunde, vogn og chauffr-reigsteret.\" shortcut=\"R\" />")
@@ -97,7 +97,7 @@ LPCTSTR CStartPageWnd::GetDialogResource() const
           _T("</WindowCanvas>")
         _T("</VerticalLayout>")
       _T("</HorizontalLayout>")
-     _T("</Dialog>");     
+     _T("</Dialog>");
 }
 
 void CStartPageWnd::OnPrepareAnimation()
