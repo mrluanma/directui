@@ -166,7 +166,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="DirectUI.rc">
+				RelativePath="App.rc">
 			</File>
 			<File
 				RelativePath="StdAfx.cpp">

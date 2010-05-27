@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Developer Studio generated include file.
-// Used by DirectUI.rc
+// Used by App.rc
 //
 #define IDR_MAINFRAME                   1
 #define IDB_ICONS16                     200
